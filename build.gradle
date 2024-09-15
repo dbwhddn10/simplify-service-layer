@@ -1,0 +1,56 @@
+import com.vanniktech.maven.publish.SonatypeHost
+
+plugins {
+    id 'java-library'
+    id 'com.vanniktech.maven.publish' version '0.29.0'
+}
+
+//java {
+//    sourceCompatibility = 22
+//    targetCompatibility = 17
+//}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+mavenPublishing {
+    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+    signAllPublications()
+    coordinates("io.github.dbwhddn10", "simplify-server-layer", "0.1.0")
+    pom {
+        name = "simplify-server-layer"
+        description = "simplify server layer"
+        url = "https://github.com/dbwhddn10/simplify-server-layer"
+        inceptionYear = "2024"
+
+        licenses {
+            license {
+                name = "The Apache License, Version 2.0"
+                url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+            }
+        }
+        developers {
+            developer {
+                id = "dbwhddn10"
+                name = "jongwoo Yoo"
+                url = "https://github.com/dbwhddn10"
+            }
+        }
+
+        scm {
+            connection = "scm:git:github.com/dbwhddn10/simplify-server-layer.git"
+            developerConnection.set("scm:git:ssh://github.com:dbwhddn10/simplify-server-layer.git")
+            url = "https://github.com/dbwhddn10/simplify-server-layer/tree/master"
+        }
+    }
+}
