@@ -27,11 +27,11 @@ test {
 mavenPublishing {
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
     signAllPublications()
-    coordinates("io.github.dbwhddn10", "simplify-server-layer", "0.1.0")
+    coordinates("io.github.dbwhddn10", "simplify-service-layer", "0.1.0")
     pom {
-        name = "simplify-server-layer"
-        description = "simplify server layer"
-        url = "https://github.com/dbwhddn10/simplify-server-layer"
+        name = "simplify-service-layer"
+        description = "simplify service layer"
+        url = "https://github.com/dbwhddn10/simplify-service-layer"
         inceptionYear = "2024"
 
         licenses {
@@ -49,9 +49,9 @@ mavenPublishing {
         }
 
         scm {
-            connection = "scm:git:github.com/dbwhddn10/simplify-server-layer.git"
-            developerConnection.set("scm:git:ssh://github.com:dbwhddn10/simplify-server-layer.git")
-            url = "https://github.com/dbwhddn10/simplify-server-layer/tree/master"
+            connection = "scm:git:github.com/dbwhddn10/simplify-service-layer.git"
+            developerConnection.set("scm:git:ssh://github.com:dbwhddn10/simplify-service-layer.git")
+            url = "https://github.com/dbwhddn10/simplify-service-layer/tree/master"
         }
     }
 }
